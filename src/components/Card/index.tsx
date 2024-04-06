@@ -5,13 +5,13 @@ import compositon_one from "/gif/composition_1.gif";
 import compositon_two from "/gif/composition_2.gif";
 
 type CardProps = {
-	name: string;
+	names: [string, number][];
 	type: boolean;
 	clickFn?: () => void;
 };
 
 //type이 true인 경우 평화상, false인 경우 욕쟁이 상
-export default function Card({ name, type, clickFn }: CardProps) {
+export default function Card({ names, type, clickFn }: CardProps) {
 	const now = new Date();
 	const year = now.getFullYear().toString();
 	const month = now.getMonth() + 1;
@@ -29,7 +29,7 @@ export default function Card({ name, type, clickFn }: CardProps) {
 				<h1 className={`${!type && "text-[#DF2425]"} text-xl`}>2024</h1>
 				<h2 className={`${!type && "text-[#DF2425]"} text-xl`}>{type ? "대화 평화상" : "욕쟁이 상"}</h2>
 				<div className="flex justify-center items-center mt-1 z-20">
-					<Typography type="name_text_01">{name}</Typography>
+					<Typography type="name_text_01">{type ? names[0][0] : names[1][0]}</Typography>
 					<button>
 						<img alt="rewrite" src="/rewrite.svg" />
 					</button>

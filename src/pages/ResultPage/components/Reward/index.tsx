@@ -4,7 +4,9 @@ import Typography from "@/components/Typography";
 import reward_particle from "/img/reward_particle.png";
 import { useState } from "react";
 
-export default function Reward() {
+type RewardProps = { rewardList: [string, number][] };
+
+export default function Reward({ rewardList }: RewardProps) {
 	const [firstCard, setFirstCard] = useState(true);
 	const [secondCard, setSecondCard] = useState(false);
 
@@ -36,7 +38,7 @@ export default function Reward() {
 			<div className="w-[375px] h-[570px] bg-black relative overflow-hidden">
 				<div className="relative w-full ">
 					<div className="flex flex-col absolute left-6 z-20">
-						<Card name="조유나" type={firstCard} clickFn={handleClick} />
+						<Card names={rewardList} type={firstCard} clickFn={handleClick} />
 						<div className="text-white scale-90 flex justify-center items-center mt-4">
 							<Button buttonType="button4">다운받기</Button>
 						</div>
@@ -44,7 +46,7 @@ export default function Reward() {
 				</div>
 
 				<div className="absolute top-16 right-1 rotate-[8deg] z-10 opacity-50">
-					<Card name="조유나" type={secondCard} clickFn={handleClick} />
+					<Card names={rewardList} type={secondCard} clickFn={handleClick} />
 				</div>
 			</div>
 		</section>

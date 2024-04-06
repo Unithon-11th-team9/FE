@@ -6,11 +6,26 @@ import reward_bronze from "/img/reward_bronze.png";
 type ScoreProps = {
 	name: string;
 	score: number;
-	lank: "GOLD" | "SILVER" | "BRONZE";
+	index: number;
 };
 
-export default function Score({ name, score, lank }: ScoreProps) {
+export default function Score({ name, score, index }: ScoreProps) {
 	const score_text = score + "점";
+	let lank;
+	switch (index) {
+		case 0:
+			lank = "GOLD";
+			break;
+		case 1:
+			lank = "SILVER";
+			break;
+		case 2:
+			lank = "BRONZE";
+			break;
+		default:
+			lank = "Unknown";
+			break;
+	}
 	return (
 		<div className="flex flex-col h-[260px] w-[70px] justify-center items-cente">
 			<Typography type="main_text_03">{score_text}</Typography>
