@@ -28,8 +28,8 @@ export default function UploadPage() {
 		if (file) {
 			formData.append("file", file);
 			mutate(file, {
-				onSuccess: () => {
-					navigate("/result");
+				onSuccess: (data) => {
+					navigate(`/result/${data}`);
 				},
 			});
 		}

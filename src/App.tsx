@@ -17,7 +17,7 @@ function App() {
 			element: <UploadPage />,
 		},
 		{
-			path: "/result",
+			path: "/result/:id",
 			element: <ResultPage />,
 		},
 	]);
