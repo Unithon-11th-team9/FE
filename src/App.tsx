@@ -1,4 +1,4 @@
-import "./App.css";
+
 import BadCard from "./components/BadCard";
 import Card from "./components/Card";
 import MbtiCard from "./components/MbtiCard";
