@@ -1,3 +1,5 @@
+import { twMerge } from "tailwind-merge";
+
 type TextName =
 	| "title_01"
 	| "title_02"
@@ -11,6 +13,7 @@ type TextName =
 
 type TextProps = {
 	type: TextName;
+	classNames?: string;
 	children: string;
 };
 
@@ -26,6 +29,6 @@ const textStyles = {
 	sub_text_03: "text-white text-subText leading-subText03 font-[SBAggroL]",
 };
 
-export default function Typography({ type, children }: TextProps) {
-	return <span className={textStyles[type]}>{children}</span>;
+export default function Typography({ type, classNames, children }: TextProps) {
+	return <span className={twMerge(textStyles[type], classNames)}>{children}</span>;
 }
