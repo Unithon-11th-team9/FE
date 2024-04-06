@@ -20,11 +20,14 @@ export default function Report() {
 			</div>
 
 			{/* 대화 요약 */}
-			<article className="flex flex-col justify-center items-center mb-8">
+			<article className="flex flex-col justify-center items-center mb-8 relative">
 				<div className="text-white">
 					<Typography type="main_text_03">대화 요약</Typography>
 				</div>
-				<div className="bg-white rounded-[30px] w-[335px] h-[206px] flex justify-center items-center m-5">
+				<button className="absolute top-[4.2rem] right-9">
+					<img alt="retry" src="/retry.svg" />
+				</button>
+				<div className="bg-white rounded-[30px] w-[335px] h-[206px] flex flex-col justify-center items-center m-5">
 					<div className="text-center m-1">
 						<Typography type="main_text_03">
 							김민지는 돈이 없어서 짜증나고 이철수는 아이돌에 빠졌으며 양은미는 주로 그들의 이야기를 듣고 위로해주는

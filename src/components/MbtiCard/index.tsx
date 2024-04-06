@@ -32,7 +32,7 @@ export default function MbtiCard({ name, type }: MbtiCardProps) {
 					야?
 				</h1>
 				<Typography type="sub_text_03">{mbti_text[type]}</Typography>
-				<span className="text-point">
+				<span className="text-point truncate w-20 text-center">
 					<Typography type="main_text_03">{name}</Typography>
 				</span>
 			</div>

@@ -30,7 +30,7 @@ export default function Reward() {
 					</div>
 				</div>
 
-				<div className="absolute top-[22rem] right-44 rotate-[8deg] z-10 opacity-50">
+				<div className="absolute top-[22rem] right-16 rotate-[8deg] z-10 opacity-50">
 					<Card name="조유나" type="bad" />
 				</div>
 			</div>
