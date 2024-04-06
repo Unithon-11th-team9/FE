@@ -8,11 +8,16 @@ type CardProps = {
 };
 
 export default function Card({ name, type }: CardProps) {
+	const now = new Date();
+	const year = now.getFullYear().toString();
+	const month = now.getMonth() + 1;
+	const date = now.getDate().toString();
+	const dataText = `${year}년 ${month.toString()}월 ${date}일`;
 	return (
-		<section
-			className={`${type === "good" ? "bg-back01" : "bg-[#141217]"} bg- w-[220px] h-[506px] text-white flex flex-col justify-around rounded-[20px] relative`}
+		<article
+			className={`${type === "good" ? "bg-back01" : "bg-[#141217]"} w-[220px] h-[506px] text-white flex flex-col justify-between rounded-[20px] relative`}
 		>
-			<div className="flex flex-col justify-center items-center mt-5">
+			<div className="flex flex-col justify-center items-center mt-6">
 				<h1 className={`${type === "bad" && "text-[#DF2425]"} text-xl`}>2024</h1>
 				<h2 className={`${type === "bad" && "text-[#DF2425]"} text-xl`}>
 					{type === "good" ? "대화 평화상" : "욕쟁이 상"}
@@ -21,25 +26,25 @@ export default function Card({ name, type }: CardProps) {
 					<Typography type="name_text_01">{name}</Typography>
 				</div>
 				{type === "good" && (
-					<img src={reward_good} width="179.3px" height="191.61px" alt="reward_good" className="mt-5" />
+					<img src={reward_good} width="179.3px" height="191.61px" alt="reward_good" className="mt-4" />
 				)}
 				{type === "bad" && (
-					<img src={reward_bad} width="234.51px" height="189.95px" alt="reward_bad" className="mt-5" />
+					<img src={reward_bad} width="234.51px" height="189.95px" alt="reward_bad" className="mt-4" />
 				)}
 
-				<div className="absolute bottom-16 text-center">
-					<Typography type="sub_text_01">귀하께서는 그간의 대화를</Typography>
+				<div className="absolute bottom-[5rem] text-center">
+					<Typography type="sub_text_03">귀하께서는 그간의 대화를</Typography>
 					<br />
-					<Typography type="sub_text_01">
+					<Typography type="sub_text_03">
 						{type === "good" ? "평화로 이끌어 주셨으므로" : "자극과 도파민을 제공해 주셨으므로"}
 					</Typography>
 					<br />
-					<Typography type="sub_text_01">그 노고에 감사드립니다</Typography>
+					<Typography type="sub_text_03">그 노고에 감사드립니다</Typography>
 				</div>
 			</div>
-			<div className="text-center">
-				<Typography type="sub_text_03">2024년 4월 6일</Typography>
+			<div className="text-center absolute bottom-4 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+				<Typography type="sub_text_03">{dataText}</Typography>
 			</div>
-		</section>
+		</article>
 	);
 }
