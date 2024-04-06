@@ -4,6 +4,8 @@ import Score from "../Score";
 import MbtiCardGrid from "../MbtiCardGrid";
 import { getSummaryNext } from "../../utils";
 import { useState } from "react";
+import Button from "@/components/Button";
+import KakaoShare from "@/components/KakaoShare";
 
 type ReportProps = {
 	summaries: string[];
@@ -18,7 +20,7 @@ type ReportProps = {
 export default function Report({ summaries, scores, mbtis }: ReportProps) {
 	const [summary, setSummary] = useState(summaries[0]);
 	return (
-		<section className="w-full h-[1500px] flex flex-col bg-black">
+		<section className="w-full h-[1550px] flex flex-col bg-black">
 			<div className="flex flex-col justify-center items-center text-point"></div>
 
 			<div className="relative h-[200px]">
@@ -55,7 +57,7 @@ export default function Report({ summaries, scores, mbtis }: ReportProps) {
 			</article>
 
 			{/* 대화 평화 점수 */}
-			<article className="flex flex-col justify-center items-center mb-5">
+			<article className="flex flex-col justify-center items-center mb-[62px]">
 				<div className="text-white">
 					<Typography type="main_text_03">대화 평화 점수</Typography>
 				</div>
@@ -79,6 +81,10 @@ export default function Report({ summaries, scores, mbtis }: ReportProps) {
 				<div className="text-white">
 					<Typography type="sub_text_02">발화 빈도 수와 공감성 멘트 비율을 통해 측정했습니다.</Typography>
 				</div>
+				<Button buttonType="button2" classNames="w-[116px] p-2 mt-5">
+					공유하기
+				</Button>
+				<KakaoShare />
 			</article>
 		</section>
 	);
