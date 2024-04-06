@@ -9,10 +9,11 @@ type CardProps = {
 	names: [string, number][];
 	type: boolean;
 	clickFn?: () => void;
+	back: boolean;
 };
 
 //type이 true인 경우 평화상, false인 경우 욕쟁이 상
-export default function Card({ names, type, clickFn }: CardProps) {
+export default function Card({ names, type, clickFn, back }: CardProps) {
 	const now = new Date();
 	const year = now.getFullYear().toString();
 	const month = now.getMonth() + 1;
@@ -39,7 +40,6 @@ export default function Card({ names, type, clickFn }: CardProps) {
 		} else {
 			setNameList({ ...nameList, second: text });
 		}
-		console.log(nameList);
 		setToggle((prev) => !prev);
 	};
 	return (
@@ -80,13 +80,12 @@ export default function Card({ names, type, clickFn }: CardProps) {
 									onClick={(e: React.MouseEvent<HTMLInputElement>) => e.stopPropagation()}
 									className="w-[104px] h-[20px] font-[PyeongChangPeace-Bold] text-sm placeholder:text-white bg-transparent p-1 border-[1px] rounded-[5px]"
 								/>
-								{/* <button onClick={handleButton}>
+								<button type="button" onClick={handleButton}>
 									<img alt="reset" src="/input-reset.svg" className="absolute top-[0.15rem] right-[0.3rem]" />
-								</button> */}
-
-								<button type="button">
-									<img alt="submit" src="/input-cancel.svg" className="absolute top-0 -right-7" />
 								</button>
+								{/* <button type="button">
+									<img alt="submit" src="/input-cancel.svg" className="absolute top-0 -right-7" />
+								</button> */}
 							</form>
 						</div>
 					) : (
@@ -95,9 +94,11 @@ export default function Card({ names, type, clickFn }: CardProps) {
 								<Typography type="name_text_01">{type ? nameList.first : nameList.second}</Typography>
 							</div>
 							{/* 이름 수정하기 버튼 */}
-							<button data-html2canvas-ignore="true" className="w-4 h-4" onClick={handleButton}>
-								<img alt="rewrite" src="/rewrite.svg" />
-							</button>
+							{!back && (
+								<button data-html2canvas-ignore="true" className="w-4 h-4" onClick={handleButton}>
+									<img alt="rewrite" src="/rewrite.svg" />
+								</button>
+							)}
 						</>
 					)}
 				</div>

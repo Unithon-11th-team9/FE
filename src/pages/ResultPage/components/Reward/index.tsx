@@ -58,7 +58,7 @@ export default function Reward({ rewardList }: RewardProps) {
 				<div className="relative w-full ">
 					<div className="flex flex-col absolute left-6 z-20">
 						<div ref={divRef} className="bg-black">
-							<Card names={rewardList} type={firstCard} clickFn={handleClick} />
+							<Card names={rewardList} type={firstCard} clickFn={handleClick} back={false} />
 						</div>
 						<div className="text-white scale-90 flex justify-center items-center mt-4">
 							<Button buttonType="button4" onClick={handleDownload}>
@@ -69,7 +69,7 @@ export default function Reward({ rewardList }: RewardProps) {
 				</div>
 
 				<div className="absolute top-16 right-1 rotate-[8deg] z-10 opacity-50">
-					<Card names={rewardList} type={secondCard} clickFn={handleClick} />
+					<Card names={rewardList} type={secondCard} clickFn={handleClick} back />
 				</div>
 			</div>
 		</section>
