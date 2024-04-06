@@ -1,10 +1,11 @@
 import Typography from "@/components/Typography";
 import reward_tape from "/img/reward_tape.png";
 import MbtiCard from "@/components/MbtiCard";
+import Score from "../Score";
 
 export default function Report() {
 	return (
-		<section className="w-full h-[1600px] flex flex-col bg-black">
+		<section className="w-full h-[1680px] flex flex-col bg-black">
 			<div className="flex flex-col justify-center items-center text-point mt-10"></div>
 
 			<div className="relative">
@@ -38,7 +39,13 @@ export default function Report() {
 				<div className="text-white">
 					<Typography type="main_text_03">대화 평화 점수</Typography>
 				</div>
-				<div className="bg-white rounded-[30px] w-[335px] h-[301px] flex justify-center items-center m-5"></div>
+				<div className="bg-white rounded-[30px] w-[335px] h-[301px] flex justify-center items-center m-5">
+					<div className="flex gap-4">
+						<Score name="김민지" score={90} lank="GOLD" />
+						<Score name="양은미" score={54} lank="SILVER" />
+						<Score name="이철수" score={30} lank="BRONZE" />
+					</div>
+				</div>
 			</article>
 
 			{/* MBTI 추측 */}
