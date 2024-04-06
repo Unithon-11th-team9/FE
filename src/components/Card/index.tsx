@@ -1,22 +1,49 @@
-import reward_good from "../../../public/img/reward_good.png";
+import Typography from "../Typography";
+import reward_good from "/img/reward_good.png";
+import reward_bad from "/img/reward_bad.png";
+import compositon_one from "/gif/composition_1.gif";
 
-export default function Card() {
+type CardProps = {
+	name: string;
+	type: boolean;
+	clickFn?: () => void;
+};
+
+//type이 true인 경우 평화상, false인 경우 욕쟁이 상
+export default function Card({ name, type, clickFn }: CardProps) {
+	const now = new Date();
+	const year = now.getFullYear().toString();
+	const month = now.getMonth() + 1;
+	const date = now.getDate().toString();
+	const dataText = `${year}년 ${month.toString()}월 ${date}일`;
 	return (
-		<section className="bg-[#17073A] w-[220px] h-[506px] text-white flex flex-col justify-around">
-			<div className="flex flex-col justify-center items-center mt-5">
-				<h1 className="text-xl">2024</h1>
-				<h2 className="text-xl">대화 평화상</h2>
-				<div className="flex justify-center p-[0.1rem]">
-					<span className="text-sm font-['PyeongChangPeace-Bold']">조유나</span>
-					{/* <button></button> */}
+		<article
+			onClick={clickFn}
+			className={`${type ? "bg-back01" : "bg-[#141217]"} w-[220px] h-[506px] text-white flex flex-col justify-between rounded-[20px] relative cursor-pointer`}
+		>
+			<div className="flex flex-col justify-center items-center mt-6 ">
+				{/* <img src={compositon_one} alt="compostion_1" className="absolute" /> */}
+				<h1 className={`${!type && "text-[#DF2425]"} text-xl`}>2024</h1>
+				<h2 className={`${!type && "text-[#DF2425]"} text-xl`}>{type ? "대화 평화상" : "욕쟁이 상"}</h2>
+				<div className="flex justify-center mt-1">
+					<Typography type="name_text_01">{name}</Typography>
 				</div>
-				<img src={reward_good} width="179.3px" height="191.61px" alt="reward_good" className="mt-5" />
-				<p className="text-xs font-light py-9 mt-3">
-					귀하께서는 그간의 대화를 <br />
-					평화로 이끌어 주셨으므로 <br />그 노고에 감사드립니다
-				</p>
+				{type && <img src={reward_good} width="179.3px" height="191.61px" alt="reward_good" className="mt-4" />}
+				{!type && <img src={reward_bad} width="234.51px" height="189.95px" alt="reward_bad" className="mt-4" />}
+
+				<div className="absolute bottom-[5rem] text-center">
+					<Typography type="sub_text_03">귀하께서는 그간의 대화를</Typography>
+					<br />
+					<Typography type="sub_text_03">
+						{type ? "평화로 이끌어 주셨으므로" : "자극과 도파민을 제공해 주셨으므로"}
+					</Typography>
+					<br />
+					<Typography type="sub_text_03">그 노고에 감사드립니다</Typography>
+				</div>
 			</div>
-			<p className="text-xs text-white opacity-40">2024년 4월 6일</p>
-		</section>
+			<div className="text-center absolute bottom-4 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+				<Typography type="sub_text_03">{dataText}</Typography>
+			</div>
+		</article>
 	);
 }
