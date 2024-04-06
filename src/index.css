@@ -21,3 +21,13 @@
       font-family: "SBAggroB", system-ui, sans-serif;
     }
 }
+
+#root {
+  width:100vw;
+  height:100vh;
+  background-color: #202020;
+
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
