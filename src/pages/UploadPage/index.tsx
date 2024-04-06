@@ -45,7 +45,7 @@ export default function UploadPage() {
 						<Typography
 							type="title_02"
 							classNames="whitespace-pre-wrap text-point"
-						>{`2024 대화 평화상\n참가 주의사항`}</Typography>
+						>{`2024 대화 평화상\n참가 방법`}</Typography>
 						<img alt="caution" src="/caution.png" className="pr-5 pl-5 pt-8" />
 					</section>
 					<img

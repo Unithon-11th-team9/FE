@@ -6,14 +6,15 @@ import compositon_two from "/gif/composition_2.gif";
 import { FormEvent, useState } from "react";
 
 type CardProps = {
-	names: [string, number][];
+	name: string;
 	type: boolean;
 	clickFn?: () => void;
+	handleConfirmNameChange: (modifiedName: string) => void;
 	back: boolean;
 };
 
 //type이 true인 경우 평화상, false인 경우 욕쟁이 상
-export default function Card({ names, type, clickFn, back }: CardProps) {
+export default function Card({ name, type, clickFn, handleConfirmNameChange, back }: CardProps) {
 	const now = new Date();
 	const year = now.getFullYear().toString();
 	const month = now.getMonth() + 1;
@@ -21,25 +22,19 @@ export default function Card({ names, type, clickFn, back }: CardProps) {
 	const dataText = `${year}년 ${month.toString()}월 ${date}일`;
 
 	const [toggle, setToggle] = useState(false);
-	const [text, setText] = useState("");
-
-	const [nameList, setNameList] = useState({ first: names[0][0], second: names[1][0] });
+	const [userName, setUserName] = useState<string>(name);
 
 	const handleButton = (e: React.MouseEvent<HTMLButtonElement>) => {
 		e.stopPropagation();
 		setToggle((prev) => !prev);
 	};
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		setText(e.target.value);
+		setUserName(e.target.value);
 	};
 	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
 		// e.preventDefault();
 		e.stopPropagation();
-		if (type) {
-			setNameList({ ...nameList, first: text });
-		} else {
-			setNameList({ ...nameList, second: text });
-		}
+		handleConfirmNameChange(userName);
 		setToggle((prev) => !prev);
 	};
 	return (
@@ -75,7 +70,7 @@ export default function Card({ names, type, clickFn, back }: CardProps) {
 								<input
 									type="text"
 									placeholder="이름"
-									value={text}
+									value={userName}
 									onChange={handleChange}
 									onClick={(e: React.MouseEvent<HTMLInputElement>) => e.stopPropagation()}
 									className="w-[104px] h-[20px] font-[PyeongChangPeace-Bold] text-sm placeholder:text-white bg-transparent p-1 border-[1px] rounded-[5px]"
@@ -83,15 +78,12 @@ export default function Card({ names, type, clickFn, back }: CardProps) {
 								<button type="button" onClick={handleButton}>
 									<img alt="reset" src="/input-reset.svg" className="absolute top-[0.15rem] right-[0.3rem]" />
 								</button>
-								{/* <button type="button">
-									<img alt="submit" src="/input-cancel.svg" className="absolute top-0 -right-7" />
-								</button> */}
 							</form>
 						</div>
 					) : (
 						<>
 							<div className="truncate">
-								<Typography type="name_text_01">{type ? nameList.first : nameList.second}</Typography>
+								<Typography type="name_text_01">{`${userName}`}</Typography>
 							</div>
 							{/* 이름 수정하기 버튼 */}
 							{!back && (
