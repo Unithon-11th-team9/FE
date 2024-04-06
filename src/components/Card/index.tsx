@@ -84,7 +84,7 @@ export default function Card({ names, type, clickFn }: CardProps) {
 									<img alt="reset" src="/input-reset.svg" className="absolute top-[0.15rem] right-[0.3rem]" />
 								</button> */}
 
-								<button>
+								<button type="button">
 									<img alt="submit" src="/input-cancel.svg" className="absolute top-0 -right-7" />
 								</button>
 							</form>
