@@ -12,7 +12,7 @@ export default function Card() {
 				</div>
 				<img src={reward_good} width="179.3px" height="191.61px" alt="reward_good" className="mt-5" />
 				<p className="text-xs font-light py-9 mt-3">
-					귀하께서는 오늘의 대화를 <br />
+					귀하께서는 그간의 대화를 <br />
 					평화로 이끌어 주셨으므로 <br />그 노고에 감사드립니다
 				</p>
 			</div>

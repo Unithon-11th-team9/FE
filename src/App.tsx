@@ -1,6 +1,7 @@
 import "./App.css";
 import BadCard from "./components/BadCard";
 import Card from "./components/Card";
+import MbtiCard from "./components/MbtiCard";
 
 function App() {
 	return (
@@ -8,6 +9,7 @@ function App() {
 			<h1 className="text-3xl underline font-[300]">Hello world!</h1>
 			<Card />
 			<BadCard />
+			<MbtiCard />
 		</div>
 	);
 }
