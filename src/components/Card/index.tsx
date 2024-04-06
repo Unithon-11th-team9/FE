@@ -2,6 +2,7 @@ import Typography from "../Typography";
 import reward_good from "/img/reward_good.png";
 import reward_bad from "/img/reward_bad.png";
 import compositon_one from "/gif/composition_1.gif";
+import compositon_two from "/gif/composition_2.gif";
 
 type CardProps = {
 	name: string;
@@ -21,11 +22,13 @@ export default function Card({ name, type, clickFn }: CardProps) {
 			onClick={clickFn}
 			className={`${type ? "bg-back01" : "bg-[#141217]"} w-[220px] h-[506px] text-white flex flex-col justify-between rounded-[20px] relative cursor-pointer`}
 		>
-			<div className="flex flex-col justify-center items-center mt-6 ">
-				{/* <img src={compositon_one} alt="compostion_1" className="absolute" /> */}
+			{type && <img src={compositon_one} alt="compostion_1" className="absolute z-0 overflow-hidden top-16" />}
+			{!type && <img src={compositon_two} alt="compostion_2" className="absolute z-0 overflow-hidden top-16" />}
+
+			<div className="flex flex-col justify-center items-center mt-6 z-20">
 				<h1 className={`${!type && "text-[#DF2425]"} text-xl`}>2024</h1>
 				<h2 className={`${!type && "text-[#DF2425]"} text-xl`}>{type ? "대화 평화상" : "욕쟁이 상"}</h2>
-				<div className="flex justify-center mt-1">
+				<div className="flex justify-center mt-1 z-20">
 					<Typography type="name_text_01">{name}</Typography>
 				</div>
 				{type && <img src={reward_good} width="179.3px" height="191.61px" alt="reward_good" className="mt-4" />}
