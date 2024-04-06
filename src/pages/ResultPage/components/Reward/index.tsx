@@ -3,7 +3,7 @@ import Card from "@/components/Card";
 import Typography from "@/components/Typography";
 import reward_particle from "/img/reward_particle.png";
 
-export default function RewardSection() {
+export default function Reward() {
 	return (
 		<section className="w-full flex flex-col">
 			<div className="relative">
@@ -20,7 +20,7 @@ export default function RewardSection() {
 				</div>
 			</div>
 			{/* card select */}
-			<div className="w-[375px] h-[700px] bg-black">
+			<div className="w-[375px] h-[550px] bg-black">
 				<div className="relative w-full ">
 					<div className="flex flex-col absolute top-10 left-6 z-20">
 						<Card name="조유나" type="good" />

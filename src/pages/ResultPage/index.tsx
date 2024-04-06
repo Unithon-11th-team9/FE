@@ -1,12 +1,12 @@
 import Layout from "@/components/Layout";
-import RewardSection from "./components/RewardSection";
-import ReportSection from "./components/ReportSection";
+import Reward from "./components/Reward";
+import Report from "./components/Report";
 
 export default function ResultPage() {
 	return (
 		<Layout>
-			<RewardSection />
-			{/* <ReportSection /> */}
+			<Reward />
+			<Report />
 		</Layout>
 	);
 }
