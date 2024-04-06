@@ -12,9 +12,6 @@ export default () => {
 	// 배포한 자신의 사이트
 	const realUrl = "https://enchanting-starlight-3ba18d.netlify.app";
 
-	// 로컬 주소 (localhost 3000 같은거)
-	const resultUrl = window.location.href;
-
 	// 재랜더링시에 실행되게 해준다.
 	useEffect(() => {
 		// init 해주기 전에 clean up 을 해준다.
