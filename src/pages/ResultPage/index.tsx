@@ -6,7 +6,7 @@ export default function ResultPage() {
 	return (
 		<Layout>
 			<RewardSection />
-			<ReportSection />
+			{/* <ReportSection /> */}
 		</Layout>
 	);
 }
