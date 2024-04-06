@@ -4,6 +4,8 @@ import Score from "../Score";
 import MbtiCardGrid from "../MbtiCardGrid";
 import { getSummaryNext } from "../../utils";
 import { useState } from "react";
+import Button from "@/components/Button";
+import KakaoShare from "@/components/KakaoShare";
 
 type ReportProps = {
 	summaries: string[];
@@ -17,8 +19,19 @@ type ReportProps = {
 };
 export default function Report({ summaries, scores, mbtis }: ReportProps) {
 	const [summary, setSummary] = useState(summaries[0]);
+
+	const currentUrl = window.location.href;
+	const handleCopyUrl = () => {
+		navigator.clipboard.writeText(currentUrl).then(() => {
+			alert("클립보드에 복사되었습니다");
+		});
+		// .catch((error) => {
+		// 	console.error("클립보드 복사 실패!");
+		// });
+	};
+
 	return (
-		<section className="w-full h-[1500px] flex flex-col bg-black">
+		<section className="w-full h-[1650px] flex flex-col bg-black">
 			<div className="flex flex-col justify-center items-center text-point"></div>
 
 			<div className="relative h-[200px]">
@@ -55,7 +68,7 @@ export default function Report({ summaries, scores, mbtis }: ReportProps) {
 			</article>
 
 			{/* 대화 평화 점수 */}
-			<article className="flex flex-col justify-center items-center mb-5">
+			<article className="flex flex-col justify-center items-center mb-[62px]">
 				<div className="text-white">
 					<Typography type="main_text_03">대화 평화 점수</Typography>
 				</div>
@@ -78,6 +91,18 @@ export default function Report({ summaries, scores, mbtis }: ReportProps) {
 				<MbtiCardGrid mbtis={mbtis} />
 				<div className="text-white">
 					<Typography type="sub_text_02">발화 빈도 수와 공감성 멘트 비율을 통해 측정했습니다.</Typography>
+				</div>
+				<div className="flex flex-col gap-4 justify-center mt-10">
+					<div className="relative">
+						<img alt="kakao" src="/kakao.svg" className="absolute top-4 left-4" />
+						<KakaoShare />
+					</div>
+					<div className="relative">
+						<img alt="link" src="/link.svg" className="absolute top-4 left-6" />
+						<Button buttonType="button2" classNames="text-black text-lg w-[225px] indent-2" onClick={handleCopyUrl}>
+							링크 복사하기
+						</Button>
+					</div>
 				</div>
 			</article>
 		</section>

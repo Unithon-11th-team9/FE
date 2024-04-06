@@ -82,12 +82,12 @@ export default function Card({ name, type, clickFn, handleConfirmNameChange, bac
 						</div>
 					) : (
 						<>
-							<div className="truncate">
+							<div className="truncate pb-1">
 								<Typography type="name_text_01">{`${userName}`}</Typography>
 							</div>
 							{/* 이름 수정하기 버튼 */}
 							{!back && (
-								<button data-html2canvas-ignore="true" className="w-4 h-4" onClick={handleButton}>
+								<button data-html2canvas-ignore="true" className="w-4 h-4 mb-2" onClick={handleButton}>
 									<img alt="rewrite" src="/rewrite.svg" />
 								</button>
 							)}

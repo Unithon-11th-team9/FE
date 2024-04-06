@@ -17,7 +17,7 @@ export function getRewardPeoples(scores: PeaceScore): [string, number][] {
 }
 
 // 현재 인덱스를 추적할 변수 선언
-let currentIndex = 0;
+let currentIndex = 1;
 
 export function getSummaryNext(summaries: string[]): string {
 	// 현재 인덱스에 해당하는 요소를 가져옴
