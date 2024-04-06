@@ -22,14 +22,12 @@ export default function Report({ summaries, scores, mbtis }: ReportProps) {
 
 	const currentUrl = window.location.href;
 	const handleCopyUrl = () => {
-		navigator.clipboard
-			.writeText(currentUrl)
-			.then(() => {
-				alert("클립보드에 복사되었습니다");
-			})
-			.catch((error) => {
-				console.error("클립보드 복사 실패!");
-			});
+		navigator.clipboard.writeText(currentUrl).then(() => {
+			alert("클립보드에 복사되었습니다");
+		});
+		// .catch((error) => {
+		// 	console.error("클립보드 복사 실패!");
+		// });
 	};
 
 	return (
