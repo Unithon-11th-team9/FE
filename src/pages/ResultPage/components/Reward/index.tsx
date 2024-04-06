@@ -9,13 +9,12 @@ import saveAs from "file-saver";
 type RewardProps = { rewardList: [string, number][] };
 
 export default function Reward({ rewardList }: RewardProps) {
-	const [firstCard, setFirstCard] = useState(true);
-	const [secondCard, setSecondCard] = useState(false);
+	const [displayCardIndex, setDisplayCardIndex] = useState(0);
 	const divRef = useRef<HTMLDivElement>(null);
+	const [modifiableRewaredList, setModifiableRewardList] = useState([rewardList[0][0], rewardList[1][0]]);
 
 	const handleClick = () => {
-		setFirstCard((prev) => !prev);
-		setSecondCard((prev) => !prev);
+		setDisplayCardIndex(displayCardIndex === 1 ? 0 : 1);
 	};
 
 	const handleDownload = async () => {
@@ -32,6 +31,11 @@ export default function Reward({ rewardList }: RewardProps) {
 		} catch (error) {
 			console.error("Error converting div to image:", error);
 		}
+	};
+
+	const handleNameChange = (name: string) => {
+		modifiableRewaredList[displayCardIndex] = name;
+		setModifiableRewardList([...modifiableRewaredList]);
 	};
 
 	return (
@@ -58,7 +62,14 @@ export default function Reward({ rewardList }: RewardProps) {
 				<div className="relative w-full ">
 					<div className="flex flex-col absolute left-6 z-20">
 						<div ref={divRef} className="bg-black">
-							<Card names={rewardList} type={firstCard} clickFn={handleClick} back={false} />
+							<Card
+								key={modifiableRewaredList[displayCardIndex]}
+								name={modifiableRewaredList[displayCardIndex]}
+								type={Boolean(!displayCardIndex)}
+								handleConfirmNameChange={handleNameChange}
+								clickFn={handleClick}
+								back={false}
+							/>
 						</div>
 						<div className="text-white scale-90 flex justify-center items-center mt-4">
 							<Button buttonType="button4" onClick={handleDownload}>
@@ -69,7 +80,14 @@ export default function Reward({ rewardList }: RewardProps) {
 				</div>
 
 				<div className="absolute top-16 right-1 rotate-[8deg] z-10 opacity-50">
-					<Card names={rewardList} type={secondCard} clickFn={handleClick} back />
+					<Card
+						key={modifiableRewaredList[Number(!displayCardIndex)]}
+						name={modifiableRewaredList[Number(!displayCardIndex)]}
+						handleConfirmNameChange={handleNameChange}
+						type={Boolean(displayCardIndex)}
+						clickFn={handleClick}
+						back
+					/>
 				</div>
 			</div>
 		</section>
