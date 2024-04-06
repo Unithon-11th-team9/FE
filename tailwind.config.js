@@ -3,6 +3,9 @@ export default {
 	content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
 	theme: {
 		extend: {
+			width: {
+				mobile: "375px",
+			},
 			colors: {
 				point: "#13D20C",
 				back01: "#17073A",
