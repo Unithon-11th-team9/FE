@@ -26,12 +26,16 @@ export default function MbtiCard({ name, type }: MbtiCardProps) {
 			<div className="w-[158px] h-[119px] rounded-[30px] flex flex-col justify-center items-center text-xl gap-[0.1rem] bg-white">
 				<h1>
 					너
-					<span className="text-point">
-						<Typography type="main_text_03">{type}</Typography>
+					<span className="text-point ml-1">
+						<Typography type="main_text_03" classNames={`${type === "T" ? "text-[#DF2425]" : "text-point"}`}>
+							{type}
+						</Typography>
 					</span>
 					야?
 				</h1>
-				<Typography type="sub_text_03">{mbti_text[type]}</Typography>
+				<Typography type="sub_text_03" classNames="text-black">
+					{mbti_text[type]}
+				</Typography>
 				<span className="text-point truncate w-20 text-center">
 					<Typography type="main_text_03">{name}</Typography>
 				</span>

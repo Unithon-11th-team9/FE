@@ -5,7 +5,7 @@ import Score from "../Score";
 
 export default function Report() {
 	return (
-		<section className="w-full h-[1680px] flex flex-col bg-black">
+		<section className="w-full h-[1500px] flex flex-col bg-black">
 			<div className="flex flex-col justify-center items-center text-point"></div>
 
 			<div className="relative h-[200px]">
@@ -14,10 +14,14 @@ export default function Report() {
 				</div>
 
 				{/* title */}
-				<div className="absolute top-20 translate-x-20">
-					<div className="flex flex-col justify-center items-center text-point">
-						<Typography type="title_02">AI가 분석한</Typography>
-						<Typography type="title_02">대화 분석 리포트</Typography>
+				<div className="absolute top-20 translate-x-16">
+					<div className="flex flex-col justify-center items-center">
+						<Typography type="title_02" classNames="text-point">
+							AI가 분석한
+						</Typography>
+						<Typography type="title_02" classNames="text-point">
+							대화 분석 리포트
+						</Typography>
 					</div>
 				</div>
 			</div>

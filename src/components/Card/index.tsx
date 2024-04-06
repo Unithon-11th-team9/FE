@@ -28,8 +28,11 @@ export default function Card({ name, type, clickFn }: CardProps) {
 			<div className="flex flex-col justify-center items-center mt-6 z-20">
 				<h1 className={`${!type && "text-[#DF2425]"} text-xl`}>2024</h1>
 				<h2 className={`${!type && "text-[#DF2425]"} text-xl`}>{type ? "대화 평화상" : "욕쟁이 상"}</h2>
-				<div className="flex justify-center mt-1 z-20">
+				<div className="flex justify-center items-center mt-1 z-20">
 					<Typography type="name_text_01">{name}</Typography>
+					<button>
+						<img alt="rewrite" src="/rewrite.svg" />
+					</button>
 				</div>
 				{type && <img src={reward_good} width="179.3px" height="191.61px" alt="reward_good" className="mt-4" />}
 				{!type && <img src={reward_bad} width="234.51px" height="189.95px" alt="reward_bad" className="mt-4" />}
