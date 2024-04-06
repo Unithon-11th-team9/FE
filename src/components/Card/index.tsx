@@ -18,6 +18,7 @@ export default function Card({ name, type }: CardProps) {
 			className={`${type === "good" ? "bg-back01" : "bg-[#141217]"} w-[220px] h-[506px] text-white flex flex-col justify-between rounded-[20px] relative`}
 		>
 			<div className="flex flex-col justify-center items-center mt-6">
+				{/* <img alt="compostion_1" src="/gif/compsition_1.gif" /> */}
 				<h1 className={`${type === "bad" && "text-[#DF2425]"} text-xl`}>2024</h1>
 				<h2 className={`${type === "bad" && "text-[#DF2425]"} text-xl`}>
 					{type === "good" ? "대화 평화상" : "욕쟁이 상"}

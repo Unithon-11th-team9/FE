@@ -8,8 +8,11 @@ export default function Report() {
 		<section className="w-full h-[1680px] flex flex-col bg-black">
 			<div className="flex flex-col justify-center items-center text-point mt-10"></div>
 
-			<div className="relative">
-				<img src={reward_tape} alt="tape" />
+			<div className="relative h-[200px]">
+				<div className="absolute right-0 ">
+					<img src={reward_tape} alt="tape" />
+				</div>
+
 				{/* title */}
 				<div className="absolute top-20 translate-x-20">
 					<div className="flex flex-col justify-center items-center text-point">
@@ -28,7 +31,7 @@ export default function Report() {
 					<img alt="retry" src="/retry.svg" />
 				</button>
 				<div className="bg-white rounded-[30px] w-[335px] h-[206px] flex flex-col justify-center items-center m-5">
-					<div className="text-center m-1">
+					<div className="text-center m-1 p-2">
 						<Typography type="main_text_03">
 							김민지는 돈이 없어서 짜증나고 이철수는 아이돌에 빠졌으며 양은미는 주로 그들의 이야기를 듣고 위로해주는
 							대화
