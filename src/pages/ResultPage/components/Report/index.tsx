@@ -5,6 +5,7 @@ import MbtiCardGrid from "../MbtiCardGrid";
 import { getSummaryNext } from "../../utils";
 import { useState } from "react";
 import Button from "@/components/Button";
+import KakaoShare from "@/components/KakaoShare";
 
 type ReportProps = {
 	summaries: string[];
@@ -83,6 +84,7 @@ export default function Report({ summaries, scores, mbtis }: ReportProps) {
 				<Button buttonType="button2" classNames="w-[116px] p-2 mt-5">
 					공유하기
 				</Button>
+				<KakaoShare />
 			</article>
 		</section>
 	);
