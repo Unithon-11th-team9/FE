@@ -27,7 +27,7 @@ export default function Score({ name, score, index }: ScoreProps) {
 			break;
 	}
 	return (
-		<div className="flex flex-col h-[260px] w-[70px] justify-center items-cente">
+		<div className="flex flex-col h-[260px] w-[70px] justify-center items-center">
 			<Typography type="main_text_03">{score_text}</Typography>
 			<div className="w-16">
 				{lank === "GOLD" && <img src={reward_gold} alt="gold" />}
