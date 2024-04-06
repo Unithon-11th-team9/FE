@@ -5,7 +5,7 @@ import compositon_one from "/gif/composition_1.gif";
 import compositon_two from "/gif/composition_2.gif";
 
 type CardProps = {
-	names: string[];
+	names: [string, number][];
 	type: boolean;
 	clickFn?: () => void;
 };
