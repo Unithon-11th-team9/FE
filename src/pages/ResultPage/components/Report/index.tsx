@@ -45,11 +45,11 @@ export default function Report({ summaries, scores, mbtis }: ReportProps) {
 				<div className="text-white">
 					<Typography type="main_text_03">대화 요약</Typography>
 				</div>
-				<button onClick={() => setSummary(getSummaryNext(summaries))} className="absolute top-[4.2rem] right-9">
-					<img alt="retry" src="/retry.svg" />
-				</button>
-				<div className="bg-white rounded-[30px] w-[335px] h-[206px] flex flex-col justify-center items-center m-5">
-					<div className="text-center m-1 p-2">
+				<div className="bg-white rounded-[30px] w-[335px] h-[206px] flex flex-col items-center m-5 relative">
+					<button onClick={() => setSummary(getSummaryNext(summaries))} className="absolute top-[21px] right-4">
+						<img alt="retry" src="/retry.svg" />
+					</button>
+					<div className="text-center px-3 pt-[58px]">
 						<Typography type="main_text_03">{summary}</Typography>
 					</div>
 				</div>
