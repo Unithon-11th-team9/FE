@@ -23,7 +23,7 @@ const textStyles = {
 	main_text_03: "text-white text-mainText leading-mainText03",
 	sub_text_01: "text-white text-subText leading-subText01",
 	sub_text_02: "text-white text-subText leading-subText02",
-	sub_text_03: "text-white text-subText leading-subText03",
+	sub_text_03: "text-white text-subText leading-subText03 font-[SBAggroL]",
 };
 
 export default function Typography({ type, children }: TextProps) {
