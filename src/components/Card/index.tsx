@@ -22,15 +22,31 @@ export default function Card({ names, type, clickFn }: CardProps) {
 			onClick={clickFn}
 			className={`${type ? "bg-back01" : "bg-[#141217]"} w-[220px] h-[506px] text-white flex flex-col justify-between rounded-[20px] relative cursor-pointer`}
 		>
-			{type && <img src={compositon_one} alt="compostion_1" className="absolute z-0 overflow-hidden top-16" />}
-			{!type && <img src={compositon_two} alt="compostion_2" className="absolute z-0 overflow-hidden top-16" />}
+			{type && (
+				<img
+					src={compositon_one}
+					alt="compostion_1"
+					className="absolute z-0 overflow-hidden top-16"
+					data-html2canvas-ignore="true"
+				/>
+			)}
+			{!type && (
+				<img
+					src={compositon_two}
+					alt="compostion_2"
+					className="absolute z-0 overflow-hidden top-16"
+					data-html2canvas-ignore="true"
+				/>
+			)}
 
 			<div className="flex flex-col justify-center items-center mt-6 z-20">
 				<h1 className={`${!type && "text-[#DF2425]"} text-xl`}>2024</h1>
 				<h2 className={`${!type && "text-[#DF2425]"} text-xl`}>{type ? "대화 평화상" : "욕쟁이 상"}</h2>
-				<div className="flex justify-center items-center mt-1 z-20">
-					<Typography type="name_text_01">{type ? names[0][0] : names[1][0]}</Typography>
-					<button>
+				<div className="flex justify-center items-center mt-1 z-20 w-44 h-5">
+					<div className="truncate">
+						<Typography type="name_text_01">{type ? names[0][0] : names[1][0]}</Typography>
+					</div>
+					<button data-html2canvas-ignore="true" className="w-4 h-4">
 						<img alt="rewrite" src="/rewrite.svg" />
 					</button>
 				</div>

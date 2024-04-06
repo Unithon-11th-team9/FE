@@ -36,7 +36,7 @@ export default function MbtiCard({ name, type }: MbtiCardProps) {
 				<Typography type="sub_text_03" classNames="text-black">
 					{mbti_text[type]}
 				</Typography>
-				<span className="text-point truncate w-20 text-center">
+				<span className="text-point truncate w-28 text-center">
 					<Typography type="main_text_03">{name}</Typography>
 				</span>
 			</div>
