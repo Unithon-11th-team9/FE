@@ -11,7 +11,8 @@ const { Kakao } = window;
 
 export default () => {
 	// 배포한 자신의 사이트
-	const realUrl = "https://enchanting-starlight-3ba18d.netlify.app";
+	const currentUrl = window.location.href;
+	// const realUrl = "https://enchanting-starlight-3ba18d.netlify.app";
 
 	// 재랜더링시에 실행되게 해준다.
 	useEffect(() => {
@@ -31,14 +32,14 @@ export default () => {
 				description: "우리 단톡방에서 2024 대화 평화상 수상자는?",
 				imageUrl: "https://github.com/Unithon-11th-team9/frontend/assets/65716445/3512fe1f-19ba-4fca-9b5f-9a9054710e3b",
 				link: {
-					mobileWebUrl: realUrl,
+					mobileWebUrl: currentUrl,
 				},
 			},
 			buttons: [
 				{
 					title: "나도 테스트 하러가기",
 					link: {
-						mobileWebUrl: realUrl,
+						mobileWebUrl: currentUrl,
 					},
 				},
 			],
