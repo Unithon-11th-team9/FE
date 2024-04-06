@@ -1,18 +1,30 @@
-import BadCard from "./components/BadCard";
-import Card from "./components/Card";
-import Layout from "./components/Layout";
-import MbtiCard from "./components/MbtiCard";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import JoinPage from "./pages/JoinPage";
+import UploadPage from "./pages/UploadPage";
+import LoadingPage from "./pages/LoadingPage";
+import ResultPage from "./pages/ResultPage";
 
 function App() {
-	return (
-		<Layout>
-			<h1 className="text-3xl underline text-white font-[SBAggroM]">Hello world!</h1>
-			<h1 className="text-3xl underline text-white font-[SBAggroL]">Hello world!</h1>
-			<Card />
-			<BadCard />
-			<MbtiCard />
-		</Layout>
-	);
+	const router = createBrowserRouter([
+		{
+			path: "/",
+			element: <JoinPage />,
+		},
+		{
+			path: "/upload",
+			element: <UploadPage />,
+		},
+		{
+			path: "/loading",
+			element: <LoadingPage />,
+		},
+		{
+			path: "/result",
+			element: <ResultPage />,
+		},
+	]);
+
+	return <RouterProvider router={router} />;
 }
 
 export default App;
