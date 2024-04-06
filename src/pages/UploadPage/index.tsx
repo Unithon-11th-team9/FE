@@ -62,7 +62,13 @@ export default function UploadPage() {
 							심사 받기
 						</Button>
 					)}
-					<input type="file" ref={inputRef} style={{ display: "none" }} onChange={handleFileChange} />
+					<input
+						type="file"
+						ref={inputRef}
+						style={{ display: "none" }}
+						onChange={handleFileChange}
+						accept=".txt, .csv"
+					/>
 				</>
 			)}
 		</Layout>
