@@ -2,17 +2,36 @@ import Button from "@/components/Button";
 import Card from "@/components/Card";
 import Typography from "@/components/Typography";
 import reward_particle from "/img/reward_particle.png";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import html2canvas from "html2canvas";
+import saveAs from "file-saver";
 
 type RewardProps = { rewardList: [string, number][] };
 
 export default function Reward({ rewardList }: RewardProps) {
 	const [firstCard, setFirstCard] = useState(true);
 	const [secondCard, setSecondCard] = useState(false);
+	const divRef = useRef<HTMLDivElement>(null);
 
 	const handleClick = () => {
 		setFirstCard((prev) => !prev);
 		setSecondCard((prev) => !prev);
+	};
+
+	const handleDownload = async () => {
+		if (!divRef.current) return;
+
+		try {
+			const div = divRef.current;
+			const canvas = await html2canvas(div, { scale: 2 });
+			canvas.toBlob((blob) => {
+				if (blob !== null) {
+					saveAs(blob, "result.png");
+				}
+			});
+		} catch (error) {
+			console.error("Error converting div to image:", error);
+		}
 	};
 
 	return (
@@ -38,9 +57,13 @@ export default function Reward({ rewardList }: RewardProps) {
 			<div className="w-[375px] h-[570px] bg-black relative overflow-hidden">
 				<div className="relative w-full ">
 					<div className="flex flex-col absolute left-6 z-20">
-						<Card names={rewardList} type={firstCard} clickFn={handleClick} />
+						<div ref={divRef} className="bg-black">
+							<Card names={rewardList} type={firstCard} clickFn={handleClick} />
+						</div>
 						<div className="text-white scale-90 flex justify-center items-center mt-4">
-							<Button buttonType="button4">다운받기</Button>
+							<Button buttonType="button4" onClick={handleDownload}>
+								다운받기
+							</Button>
 						</div>
 					</div>
 				</div>

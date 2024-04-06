@@ -17,7 +17,6 @@ type ReportProps = {
 };
 export default function Report({ summaries, scores, mbtis }: ReportProps) {
 	const [summary, setSummary] = useState(summaries[0]);
-	console.log(summary);
 	return (
 		<section className="w-full h-[1500px] flex flex-col bg-black">
 			<div className="flex flex-col justify-center items-center text-point"></div>
