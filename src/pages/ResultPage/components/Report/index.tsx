@@ -6,7 +6,7 @@ import Score from "../Score";
 export default function Report() {
 	return (
 		<section className="w-full h-[1680px] flex flex-col bg-black">
-			<div className="flex flex-col justify-center items-center text-point mt-10"></div>
+			<div className="flex flex-col justify-center items-center text-point"></div>
 
 			<div className="relative h-[200px]">
 				<div className="absolute right-0 ">
