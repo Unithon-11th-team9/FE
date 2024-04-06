@@ -5,6 +5,7 @@ export default {
 		extend: {
 			width: {
 				mobile: "375px",
+				upload: "183px",
 			},
 			colors: {
 				point: "#13D20C",
