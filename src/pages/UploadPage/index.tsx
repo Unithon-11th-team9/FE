@@ -67,7 +67,7 @@ export default function UploadPage() {
 						ref={inputRef}
 						style={{ display: "none" }}
 						onChange={handleFileChange}
-						accept=".txt, .csv"
+						accept=".txt, .csv, .zip"
 					/>
 				</>
 			)}
