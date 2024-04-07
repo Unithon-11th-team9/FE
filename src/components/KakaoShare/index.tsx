@@ -52,7 +52,7 @@ export default () => {
 		<>
 			<Button
 				buttonType="button2"
-				classNames="bg-[#FEE500] hover:bg-yellow-400 text-black text-lg w-[49px] indent-5"
+				classNames="bg-[#FEE500] hover:bg-yellow-400 text-black text-lg w-[49px] indent-5 p-3"
 				onClick={() => {
 					shareKakao();
 				}}

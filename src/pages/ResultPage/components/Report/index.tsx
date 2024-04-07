@@ -96,8 +96,8 @@ export default function Report({ summaries, scores, mbtis }: ReportProps) {
 				</div>
 				<div className="flex justify-center my-10 gap-4">
 					<KakaoShare />
-					<Button buttonType="button2" classNames="text-black text-lg w-[49px]" onClick={handleCopyUrl}>
-						<img alt="link" src="/link.svg" className="w-20" />
+					<Button buttonType="button2" classNames="text-black w-[49px] p-3" onClick={handleCopyUrl}>
+						<img alt="link" src="/link.svg" />
 					</Button>
 					<div className="relative">
 						<Button buttonType="button2" classNames="text-black text-lg w-[140px]" onClick={() => navigate("/")}>
