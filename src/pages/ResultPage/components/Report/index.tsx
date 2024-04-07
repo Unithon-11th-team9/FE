@@ -6,6 +6,7 @@ import { getSummaryNext } from "../../utils";
 import { useState } from "react";
 import Button from "@/components/Button";
 import KakaoShare from "@/components/KakaoShare";
+import { useNavigate } from "react-router-dom";
 
 type ReportProps = {
 	summaries: string[];
@@ -18,6 +19,7 @@ type ReportProps = {
 	};
 };
 export default function Report({ summaries, scores, mbtis }: ReportProps) {
+	const navigate = useNavigate();
 	const [summary, setSummary] = useState(summaries[0]);
 
 	const currentUrl = window.location.href;
@@ -92,7 +94,7 @@ export default function Report({ summaries, scores, mbtis }: ReportProps) {
 				<div className="text-white">
 					<Typography type="sub_text_02">발화 빈도 수와 공감성 멘트 비율을 통해 측정했습니다.</Typography>
 				</div>
-				<div className="flex flex-col gap-4 justify-center mt-10">
+				<div className="flex flex-col gap-4 justify-center my-10">
 					<div className="relative">
 						<img alt="kakao" src="/kakao.svg" className="absolute top-4 left-4" />
 						<KakaoShare />
@@ -101,6 +103,16 @@ export default function Report({ summaries, scores, mbtis }: ReportProps) {
 						<img alt="link" src="/link.svg" className="absolute top-4 left-6" />
 						<Button buttonType="button2" classNames="text-black text-lg w-[225px] indent-2" onClick={handleCopyUrl}>
 							링크 복사하기
+						</Button>
+					</div>
+					<div className="relative">
+						<img alt="link" src="/link.svg" className="absolute top-4 left-6" />
+						<Button
+							buttonType="button2"
+							classNames="text-black text-lg w-[225px] indent-2"
+							onClick={() => navigate("/")}
+						>
+							홈으로 가기
 						</Button>
 					</div>
 				</div>
