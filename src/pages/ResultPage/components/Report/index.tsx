@@ -42,7 +42,7 @@ export default function Report({ summaries, scores, mbtis }: ReportProps) {
 				</div>
 
 				{/* title */}
-				<div className="absolute top-20 translate-x-16">
+				<div className="absolute top-20 translate-x-16 mb-20">
 					<div className="flex flex-col justify-center items-center">
 						<Typography type="title_02" classNames="text-point">
 							AI가 분석한
@@ -94,25 +94,14 @@ export default function Report({ summaries, scores, mbtis }: ReportProps) {
 				<div className="text-white">
 					<Typography type="sub_text_02">발화 빈도 수와 공감성 멘트 비율을 통해 측정했습니다.</Typography>
 				</div>
-				<div className="flex flex-col gap-4 justify-center my-10">
+				<div className="flex justify-center my-10 gap-4">
+					<KakaoShare />
+					<Button buttonType="button2" classNames="text-black text-lg w-[49px]" onClick={handleCopyUrl}>
+						<img alt="link" src="/link.svg" className="w-20" />
+					</Button>
 					<div className="relative">
-						<img alt="kakao" src="/kakao.svg" className="absolute top-4 left-4" />
-						<KakaoShare />
-					</div>
-					<div className="relative">
-						<img alt="link" src="/link.svg" className="absolute top-4 left-6" />
-						<Button buttonType="button2" classNames="text-black text-lg w-[225px] indent-2" onClick={handleCopyUrl}>
-							링크 복사하기
-						</Button>
-					</div>
-					<div className="relative">
-						<img alt="link" src="/link.svg" className="absolute top-4 left-6" />
-						<Button
-							buttonType="button2"
-							classNames="text-black text-lg w-[225px] indent-2"
-							onClick={() => navigate("/")}
-						>
-							홈으로 가기
+						<Button buttonType="button2" classNames="text-black text-lg w-[140px]" onClick={() => navigate("/")}>
+							다시 하기
 						</Button>
 					</div>
 				</div>

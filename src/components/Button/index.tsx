@@ -4,7 +4,7 @@ import { twMerge } from "tailwind-merge";
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	buttonType: ButtonType;
 	classNames?: string;
-	children: string;
+	children: React.ReactNode;
 }
 
 type ButtonType = "button1" | "button2" | "button2_off" | "button3" | "button4";

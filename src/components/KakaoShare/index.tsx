@@ -52,12 +52,12 @@ export default () => {
 		<>
 			<Button
 				buttonType="button2"
-				classNames="bg-[#FEE500] hover:bg-yellow-400 text-black text-lg w-[225px] indent-5"
+				classNames="bg-[#FEE500] hover:bg-yellow-400 text-black text-lg w-[49px] indent-5"
 				onClick={() => {
 					shareKakao();
 				}}
 			>
-				카카오톡 공유하기
+				<img alt="kakao" src="/kakao.svg" />
 			</Button>
 		</>
 	);
