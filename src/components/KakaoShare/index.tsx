@@ -7,7 +7,6 @@ declare global {
 }
 
 import { useEffect } from "react";
-import Button from "../Button";
 // kakao 기능 동작을 위해 넣어준다.
 const { Kakao } = window;
 
@@ -50,15 +49,14 @@ export default () => {
 
 	return (
 		<>
-			<Button
-				buttonType="button2"
-				classNames="bg-[#FEE500] hover:bg-yellow-400 text-black text-lg w-[49px] indent-5 p-3"
+			<button
+				className="bg-[#FEE500] hover:bg-yellow-400 text-black text-lg w-[49px] p-3 rounded-[8px]"
 				onClick={() => {
 					shareKakao();
 				}}
 			>
 				<img alt="kakao" src="/kakao.svg" />
-			</Button>
+			</button>
 		</>
 	);
 };
