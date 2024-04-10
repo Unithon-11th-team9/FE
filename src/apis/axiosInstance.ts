@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const axiosInstance = axios.create({
-	baseURL: "https://ttobot.kro.kr/",
+	baseURL: "https://af3ftmmwb6vy5i26c645zamd5e0qtiqm.lambda-url.ap-northeast-2.on.aws/",
 	headers: { "Content-Type": "application/json" },
 });
 
