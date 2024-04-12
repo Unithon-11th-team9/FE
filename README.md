@@ -4,7 +4,7 @@
 
 #### 🤔 과연 우리 중에 평화로운 사람은 누구일까? 
 #### 친한 친구들, 가족과 함께 나눈 카톡 대화 기록으로 평화를 찾아보고 자신을 되돌아보는 서비스에요.
-#### 👉 [www.peacetalk.co.kr](https://enchanting-starlight-3ba18d.netlify.app)
+#### 👉 [www.peacetalk.co.kr](https://www.peacetalk.co.kr)
 
 ## 🏆 2024 대화 평화상
  
