@@ -10,17 +10,17 @@ export default function JoinPage() {
 			classNames="relative"
 			style={{ background: "linear-gradient(0deg, rgba(0,0,1,1) 0%, rgba(23,7,58,1) 100%)" }}
 		>
-			<img alt="background for join page" src="join-background.png" className="absolute top-0 left-0 w-mobile h-auto" />
-			<section className="w-full flex justify-center pt-48 flex-col items-center">
+			<img alt="background for join page" src="join-background.png" className="absolute left-0 top-0 h-auto w-mobile" />
+			<section className="flex w-full flex-col items-center justify-center pt-48">
 				<Typography type={"title_01"} classNames="text-point">
 					2024 대화 평화상
 				</Typography>
-				<img src="/main.png" className="w-72 h-72 pt-3" alt="main image" />
+				<img src="/main.png" className="h-72 w-72 pt-3" alt="main image" />
 				{/* <Button buttonType={"button1"} onClick={() => navigate("/upload")}>
 					우리 톡방 참가하기
 				</Button> */}
 			</section>
-			<section className="w-full text-center pt-6 pb-6">
+			<section className="w-full pb-6 pt-6 text-center">
 				<Typography classNames="whitespace-pre-wrap text-white" type={"main_text_03"}>
 					{`더 나은 서비스를 위해\n현재 점검 작업을 진행 중입니다.\n\n더 좋은 모습으로 돌아오겠습니다!`}
 				</Typography>

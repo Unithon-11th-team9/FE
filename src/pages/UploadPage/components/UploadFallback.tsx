@@ -20,7 +20,7 @@ export default function UploadFallback() {
 
 	return (
 		<section>
-			<div className="pl-11 mb-12 h-[90px]">
+			<div className="mb-12 h-[90px] pl-11">
 				<Typography type="main_text_03" classNames={`whitespace-pre-wrap text-white h-full`}>
 					{SENTENCES[currentIndex]}
 				</Typography>

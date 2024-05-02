@@ -41,12 +41,12 @@ export default function UploadPage() {
 				<UploadFallback />
 			) : (
 				<>
-					<section className="text-center pt-16">
+					<section className="pt-16 text-center">
 						<Typography
 							type="title_02"
 							classNames="whitespace-pre-wrap text-point"
 						>{`2024 대화 평화상\n참가 방법`}</Typography>
-						<img alt="caution" src="/caution.png" className="pr-5 pl-5 pt-8" />
+						<img alt="caution" src="/caution.png" className="pl-5 pr-5 pt-8" />
 					</section>
 					<img
 						alt="holding phone"
